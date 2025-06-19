@@ -1,0 +1,9 @@
+body {
+    display: Flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    display: Flex;
+}
