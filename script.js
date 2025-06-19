@@ -1,20 +1,5 @@
 // Rock Paper Scissor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
 // create function to play 5 Rounds track score and declare winner at the end
     // create function playGame
     // Set Score Variables for Human and Computer
@@ -22,9 +7,8 @@
     // repeat for 5 rounds stop after 5 rounds
     // call the winner
 
-
 function playGame() {
-    console.log("start")
+    console.log("start");
     const rounds = 5;
     let humanScore = 0;
     let computerScore = 0;
@@ -37,7 +21,6 @@ function playGame() {
         if (result == "youloose") computerScore++;
         if (i == 4) console.log(scoreboard(humanScore, computerScore));
     }
-
 
 //create function howwewin
 //get humanChoice and ComputerChoice
@@ -54,9 +37,9 @@ function playGame() {
     } 
 
     function scoreboard(humanScore, computerScore) {
-        if (humanScore > computerScore) return ("Player:" + humanScore + " Player Wins!" + "\nComputer:" + computerScore )
-        if (humanScore < computerScore) return ("Player:" + humanScore + "\nComputer:" + computerScore + " Computer Wins!")
-        if (humanScore === computerScore) return ("Player:" + humanScore + "\nComputer:" + computerScore + "\nDraw! Play again!")
+        if (humanScore > computerScore) return ("Player:" + humanScore + " Player Wins!" + "\nComputer:" + computerScore );
+        if (humanScore < computerScore) return ("Player:" + humanScore + "\nComputer:" + computerScore + " Computer Wins!");
+        if (humanScore === computerScore) return ("Player:" + humanScore + "\nComputer:" + computerScore + "\nDraw! Play again!");
         
     }
 
@@ -80,12 +63,12 @@ function playGame() {
 
     function getHumanChoice() {
 
-        let Humaninput = prompt("Insert your Choice Rock - Paper - Scissor")
-        let Humaninputlower = Humaninput.toLowerCase()
+        let Humaninput = prompt("Insert your Choice Rock - Paper - Scissor");
+        let Humaninputlower = Humaninput.toLowerCase();
         if (Humaninputlower == "rock") return 1;
         if (Humaninputlower == "paper") return 2;
         if (Humaninputlower == "scissor") return 3;
-        alert("invalid Input")
+        alert("invalid Input");
         return getHumanChoice();
     }
 // create function to play 1 Round
@@ -99,14 +82,12 @@ function playGame() {
             (humanChoice === 1 && computerChoice === 3) || // rock wins
             (humanChoice === 2 && computerChoice === 1) || // paper wins
             (humanChoice === 3 && computerChoice === 2) // scissor wins
-        ) {
+            ) {
             return "youwin";
-        } 
-        return "youloose";
-        
+            } 
+        return "youloose";    
     }   
-
-    
+  
 }
 
 
