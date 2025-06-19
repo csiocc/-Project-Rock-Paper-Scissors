@@ -54,7 +54,10 @@ function playGame() {
     } 
 
     function scoreboard(humanScore, computerScore) {
-        return ("Player:" + humanScore + "\nComputer:" + computerScore)
+        if (humanScore > computerScore) return ("Player:" + humanScore + " Player Wins!" + "\nComputer:" + computerScore )
+        if (humanScore < computerScore) return ("Player:" + humanScore + "\nComputer:" + computerScore + " Computer Wins!")
+        if (humanScore === computerScore) return ("Player:" + humanScore + "\nComputer:" + computerScore + "\nDraw! Play again!")
+        
     }
 
 // create function getComputerChoice
