@@ -32,20 +32,30 @@ function playGame() {
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
         let result = playRound(humanChoice, computerChoice);
-        console.log(result);
+        console.log(result + " " + howwewin(humanChoice, computerChoice));
         if (result == "youwin") humanScore++;
         if (result == "youloose") computerScore++;
-        console.log(humanScore, computerScore);
+        if (i == 4) console.log(scoreboard(humanScore, computerScore));
     }
 
 
-//create function howwin
+//create function howwewin
 //get humanChoice and ComputerChoice
 //call choices and wich choice wins
+ 
+    function howwewin(humanChoice, computerChoice) {
+        if (humanChoice === computerChoice) return "!!";
+        if (humanChoice === 1 && computerChoice === 3) return "rock wins against scissor";
+        if (humanChoice === 2 && computerChoice === 1) return "paper wins against rock";
+        if (humanChoice === 3 && computerChoice === 2) return "scissor wins against paper";
+        if (computerChoice === 1 && humanChoice === 3) return "rock wins against scissor";
+        if (computerChoice === 2 && humanChoice === 1) return "paper wins against rock";
+        if (computerChoice === 3 && humanChoice === 2) return "rock wins against scissor";
+    } 
 
- //  function howwewin(humanChoice, computerChoice, playround)
-   
-    
+    function scoreboard(humanScore, computerScore) {
+        return ("Player:" + humanScore + "\nComputer:" + computerScore)
+    }
 
 // create function getComputerChoice
 // calculate random value
