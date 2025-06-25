@@ -26,3 +26,26 @@ input {
     margin: 5px;
     border-radius: 10px;
 }
+
+.comparisonoutput {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+.playeroutput {
+    max-height: 100px;
+    max-width: auto;
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.computeroutput {
+    max-height: 100px;
+    max-width: auto;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
