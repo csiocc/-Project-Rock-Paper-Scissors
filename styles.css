@@ -45,6 +45,7 @@ input {
 .computeroutput {
     max-height: 100px;
     max-width: auto;
+    border-style: solid;
     padding: 5px;
     margin: 5px;
     border-radius: 10px;
