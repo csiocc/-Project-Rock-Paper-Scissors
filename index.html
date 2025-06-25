@@ -11,13 +11,13 @@
     <p >Welcome to Rock, Paper, Scissors, play in Console! </p>
 
     <form id="startfrm" action="/action_page.php">
-        <input type="button" onclick="playGame()" value="Start">
+        <input type="button" onclick="start()" value="Reset">
     </form>
 
     <form id="choicefrm">
-        <input type="button" class="choicebtn" id="rockbtn" data-choice="rock" value="rock">
-        <input type="button" class="choicebtn" id="paperbtn" data-choice="paper" value="paper">
-        <input type="button" class="choicebtn" id="scissorbtn" data-choice="scissor" value="scissor">
+        <input type="image" src="rock.png" class="choicebtn" id="rockbtn" data-choice="rock" value="rock">
+        <input type="image" src="paper.png" class="choicebtn" id="paperbtn" data-choice="paper" value="paper">
+        <input type="image" src="scissor.png"class="choicebtn" id="scissorbtn" data-choice="scissor" value="scissor">
     </form>
 
     <output>
@@ -25,5 +25,6 @@
         <div id="score"></div>   
     </output>
     <script src="script.js"></script>
+    <a href="https://www.flaticon.com/free-icons/fist" title="fist icons">Fist icons created by Cuputo - Flaticon</a>
 </body>
 </html>
