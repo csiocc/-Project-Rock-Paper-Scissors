@@ -156,7 +156,7 @@ let rockimg = function(img1) {
     
     img1.setAttribute("src", "rock.png");
     img1.setAttribute("id", "img1");
-    img1.setAttribute("border-style", "solid");
+    img1.setAttribute("alt", "RockHand");
     img1.setAttribute("width", "100px");  
     img1.setAttribute("height", "100px");
 
