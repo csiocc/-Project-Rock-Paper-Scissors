@@ -7,10 +7,9 @@ let humanInput = 0;
 let humanScore = 0;
 let computerScore = 0;
 outputfield = document.querySelector("output")
-let resultdiv = document.createElement("div")
+let resultdiv = document.createElement("h1")
 outputfield.appendChild(resultdiv)
-let resultdivtext = document.querySelector("div")
-resultdiv.appendChild(resultdivtext)
+resultdiv.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
 
 
 
@@ -20,7 +19,8 @@ resultdiv.appendChild(resultdivtext)
 //buttonlistener
 
 buttons.forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
         const choice = button.dataset.choice;
         switch(choice) {
             case "rock":
@@ -44,15 +44,15 @@ buttons.forEach(button => {
 })
 
 
-
+//reset score function
 
 function start() {
     console.log("start");
     humanScore = 0;
     computerScore = 0;
-    resultdivtext.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
 }
 
+// play 1 round function
 
 function playGame() {
     let humanChoice = humanInput;
@@ -61,7 +61,7 @@ function playGame() {
     console.log(result + " " + howwewin(humanChoice, computerChoice));
     if (result == "youwin") humanScore++;
     if (result == "youloose") computerScore++;     
-    resultdivtext.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
+    resultdiv.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
     }
 
 //create function how we win
@@ -97,9 +97,7 @@ function playGame() {
     }
 
 
-// create function to play 1 Round
-// define Parameters for humanChoice and computer Choice
-// compare choices and declare winner: 
+// get the winner function
 
 
     function playRound(humanChoice, computerChoice) {
