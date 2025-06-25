@@ -9,10 +9,21 @@
 </head>
 <body>
     <p text-align:center; >Welcome to Rock, Paper, Scissors, play in Console! </p>
-    <form id="frm1" action="/action_page.php">
-    <input type="button" onclick="playGame()" value="Start">
 
+    <form id="startfrm" action="/action_page.php">
+        <input type="button" onclick="playGame()" value="Start">
     </form>
+
+    <form id="choicefrm">
+        <input type="button" class="choicebtn" id="rockbtn" value="rock">
+        <input type="button" class="choicebtn" id="paperbtn" value="paper">
+        <input type="button" class="choicebtn" id="scissorbtn" value="scissor">
+    </form>
+
+    <output>
+        <div id="result"></div>
+        <div id="score"></div>   
+    </output>
     <script src="script.js"></script>
 </body>
 </html>
