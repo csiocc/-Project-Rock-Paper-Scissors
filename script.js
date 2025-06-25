@@ -1,39 +1,80 @@
 // Rock Paper Scissor
 
-// create function to play 5 Rounds track score and declare winner at the end
-    // create function playGame
-    // Set Score Variables for Human and Computer
-    // increase score by 1 for each win
-    // repeat for 5 rounds stop after 5 rounds
-    // call the winner
+// setup
+
+const buttons = document.querySelectorAll(".choicebtn");
+let humanInput = 0;
+let humanScore = 0;
+let computerScore = 0;
+outputfield = document.querySelector("output")
+let resultdiv = document.createElement("div")
+outputfield.appendChild(resultdiv)
+let resultdivtext = document.querySelector("div")
+resultdiv.appendChild(resultdivtext)
+
+
+
+
+
+
+//buttonlistener
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const choice = button.dataset.choice;
+        switch(choice) {
+            case "rock":
+                humanInput = 1;
+                console.log("PlayerChoice: Rock");
+                playGame();
+                break;
+            case "paper":
+                humanInput = 2;
+                console.log("PlayerChoice: Paper");
+                playGame();
+                break;
+            case "scissor":
+                humanInput = 3;
+                console.log("PlayerChoice: Scissor");
+                playGame();
+                break;
+        }
+            
+    })
+})
+
+
+
+
+function start() {
+    console.log("start");
+    humanScore = 0;
+    computerScore = 0;
+    resultdivtext.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
+}
+
 
 function playGame() {
-    console.log("start");
-    const rounds = 5;
-    let humanScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < rounds; i++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        let result = playRound(humanChoice, computerChoice);
-        console.log(result + " " + howwewin(humanChoice, computerChoice));
-        if (result == "youwin") humanScore++;
-        if (result == "youloose") computerScore++;
-        if (i == 4) console.log(scoreboard(humanScore, computerScore));
+    let humanChoice = humanInput;
+    let computerChoice = getComputerChoice();
+    let result = playRound(humanChoice, computerChoice);
+    console.log(result + " " + howwewin(humanChoice, computerChoice));
+    if (result == "youwin") humanScore++;
+    if (result == "youloose") computerScore++;     
+    resultdivtext.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
     }
 
-//create function howwewin
-//get humanChoice and ComputerChoice
-//call choices and wich choice wins
+//create function how we win
+
  
     function howwewin(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) return "!!";
         if (humanChoice === 1 && computerChoice === 3) return "rock wins against scissor";
         if (humanChoice === 2 && computerChoice === 1) return "paper wins against rock";
         if (humanChoice === 3 && computerChoice === 2) return "scissor wins against paper";
-        if (computerChoice === 1 && humanChoice === 3) return "rock wins against scissor";
-        if (computerChoice === 2 && humanChoice === 1) return "paper wins against rock";
-        if (computerChoice === 3 && humanChoice === 2) return "rock wins against scissor";
+        if (computerChoice === 1 && humanChoice === 3) return "scissor looses against rock";
+        if (computerChoice === 2 && humanChoice === 1) return "rock looses against paper";
+        if (computerChoice === 3 && humanChoice === 2) return "paper looses against scissor";
     } 
 
     function scoreboard(humanScore, computerScore) {
@@ -55,22 +96,7 @@ function playGame() {
         else return 3;
     }
 
-// create function getHumanChoice
-// ask for humans choice
-// make parameters case-insensitive
-// get human choice and return it to the function
-// ask again if invalid input
 
-    function getHumanChoice() {
-
-        let Humaninput = prompt("Insert your Choice Rock - Paper - Scissor");
-        let Humaninputlower = Humaninput.toLowerCase();
-        if (Humaninputlower == "rock") return 1;
-        if (Humaninputlower == "paper") return 2;
-        if (Humaninputlower == "scissor") return 3;
-        alert("invalid Input");
-        return getHumanChoice();
-    }
 // create function to play 1 Round
 // define Parameters for humanChoice and computer Choice
 // compare choices and declare winner: 
@@ -88,8 +114,5 @@ function playGame() {
         return "youloose";    
     }   
   
-}
-
-
 
 

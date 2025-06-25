@@ -1,9 +1,28 @@
 body {
     display: Flex;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
 }
 
 p {
     display: Flex;
+}
+
+#choicefrm {
+    margin: 25px;
+}
+
+a {
+    margin-top: 80%;
+}
+
+input {
+
+    max-height: 100px;
+    max-width: auto;
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
 }
