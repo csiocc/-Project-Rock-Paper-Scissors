@@ -7,10 +7,11 @@ let humanInput = 0;
 let humanScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
+let resultFieldText;
 outputfield = document.querySelector(".scoreoutput")
 let resultdiv = document.createElement("h1")
 outputfield.appendChild(resultdiv)
-resultdiv.textContent = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed); // Score and Rounds Display
+ 
 
 
 
@@ -51,7 +52,8 @@ function start() {
     humanScore = 0;
     computerScore = 0;
     roundsPlayed = 0;
-    resultdiv.textContent = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed);
+    resultFieldText = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed);
+    resultdiv.textContent = resultFieldText
     const comparison1 = document.querySelector(".comparisonoutput");
     for (let index = 0; index < 5; index++) {  
         const oldImg = comparison1.querySelector("img");    
@@ -71,7 +73,10 @@ function playGame() {
     switch2(computerChoice, result)
     if (result == "youwin") humanScore++;
     if (result == "youloose") computerScore++;     
-    resultdiv.textContent = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed);
+    resultFieldText = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed);      // Score and Rounds Display
+    resultdiv.textContent = resultFieldText
+           // Score and Rounds Display
+
     roundsPlayed++
     }
 
