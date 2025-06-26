@@ -6,11 +6,11 @@ const buttons = document.querySelectorAll(".choicebtn");
 let humanInput = 0;
 let humanScore = 0;
 let computerScore = 0;
+let roundsPlayed = 0;
 outputfield = document.querySelector(".scoreoutput")
 let resultdiv = document.createElement("h1")
 outputfield.appendChild(resultdiv)
-resultdiv.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
-
+resultdiv.textContent = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed); // Score and Rounds Display
 
 
 
@@ -47,10 +47,11 @@ buttons.forEach(button => {
 //reset score function
 
 function start() {
-    console.log("start");
+    console.log("reset");
     humanScore = 0;
     computerScore = 0;
-    resultdiv.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
+    roundsPlayed = 0;
+    resultdiv.textContent = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed);
     const comparison1 = document.querySelector(".comparisonoutput");
     for (let index = 0; index < 5; index++) {  
         const oldImg = comparison1.querySelector("img");    
@@ -70,7 +71,8 @@ function playGame() {
     switch2(computerChoice, result)
     if (result == "youwin") humanScore++;
     if (result == "youloose") computerScore++;     
-    resultdiv.textContent = ("Playerscore: " + humanScore + "  " + "Computerscore: " + computerScore);
+    resultdiv.textContent = ("Playerscore: " + humanScore + " | " + "Computerscore: " + computerScore + " | " + "Round: " + roundsPlayed);
+    roundsPlayed++
     }
 
 // Player pick display
